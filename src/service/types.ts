@@ -93,6 +93,8 @@ export type Product = {
   slug: string;
   description: string;
   price: number;
+  stock: number;
+  discountType: string;
   discount: number;
   images: string[];
   category: string;
@@ -106,6 +108,11 @@ export type Cart = {
   quantity: number;
   createdAt: string;
   updatedAt: string;
+};
+
+export type CartItem = {
+  product: Product;
+  quantity: number;
 };
 
 export type Order = {

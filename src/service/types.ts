@@ -72,6 +72,8 @@ export type User = {
   name: string;
   email: string;
   cpf: string;
+  password: string;
+  role: string;
   createdAt: string;
   updatedAt: string;
   addresses: Address[];
@@ -91,10 +93,18 @@ export type Product = {
   id: string;
   name: string;
   slug: string;
+  sku: string;
+  brand: string;
+  image: string;
+  url: string;
   description: string;
   price: number;
   stock: number;
   discountType: string;
+  comparePrice: number;
+  isFeatured: boolean;
+  avgRating: number;
+  reviews: number;
   discount: number;
   images: string[];
   category: string;

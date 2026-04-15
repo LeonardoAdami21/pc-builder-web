@@ -9,7 +9,7 @@ import { formatPrice } from "../utils/utils";
 import { StarRating } from "../components/ui";
 
 export function ComparePage() {
-  const { ids, products, remove, clear } = useCompareStore();
+  const { ids, remove, clear } = useCompareStore();
 
   const { data, isLoading } = useQuery({
     queryKey: ["compare", ids],

@@ -3,6 +3,8 @@ import api from "./api";
 export type ProductQuery = {
   category?: string;
   search?: string;
+  categoryId?: string;
+  isFeatured: boolean;
   page?: number;
   limit?: number;
 };
@@ -85,6 +87,10 @@ export type Category = {
   name: string;
   slug: string;
   description: string;
+  icon: string;
+  _count: {
+    products: number;
+  };
   createdAt: string;
   updatedAt: string;
 };
@@ -106,6 +112,9 @@ export type Product = {
   avgRating: number;
   reviews: number;
   discount: number;
+  _count: {
+    products: number;
+  };
   images: string[];
   category: string;
   createdAt: string;

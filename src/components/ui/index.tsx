@@ -55,39 +55,39 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, leftIcon, rightIcon, className, ...props }, ref) => (
     <div className="flex flex-col gap-1.5">
       {label && (
-        <label className="text-sm font-medium text-[var(--color-text-secondary)]">
+        <label className="text-sm font-medium text-(--color-text-secondary)">
           {label}
         </label>
       )}
       <div className="relative">
         {leftIcon && (
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-(--color-text-muted)">
             {leftIcon}
           </span>
         )}
         <input
           ref={ref}
           className={cn(
-            "w-full bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-lg",
-            "text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)]",
-            "focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)]/30",
+            "w-full bg-(--color-bg-card) border border-(--color-border) rounded-lg",
+            "text-(--color-text-primary) placeholder:text-(--color-text-muted)",
+            "focus:outline-none focus:border-(--color-accent) focus:ring-1 focus:ring-(--color-accent)/30",
             "transition-all duration-200 text-sm",
             "py-2.5",
             leftIcon ? "pl-10 pr-3" : "px-3",
             rightIcon ? "pr-10" : "",
             error &&
-              "border-[var(--color-danger)] focus:border-[var(--color-danger)]",
+              "border-(--color-danger) focus:border-(--color-danger)",
             className,
           )}
           {...props}
         />
         {rightIcon && (
-          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]">
+          <span className="absolute right-3 top-1/2 -translate-y-1/2 text-(--color-text-muted)">
             {rightIcon}
           </span>
         )}
       </div>
-      {error && <p className="text-xs text-[var(--color-danger)]">{error}</p>}
+      {error && <p className="text-xs text-(--color-danger)">{error}</p>}
     </div>
   ),
 );
@@ -129,19 +129,19 @@ export function StarRating({
           <RiStarFill
             key={star}
             size={size}
-            className="text-[var(--color-price)]"
+            className="text-(--color-price)"
           />
         ) : half ? (
           <RiStarHalfFill
             key={star}
             size={size}
-            className="text-[var(--color-price)]"
+            className="text-(--color-price)"
           />
         ) : (
           <RiStarLine
             key={star}
             size={size}
-            className="text-[var(--color-text-muted)]"
+            className="text-(--color-text-muted)"
           />
         );
       })}
@@ -151,14 +151,14 @@ export function StarRating({
 
 // ── Divider ────────────────────────────────────────────────
 export function Divider({ className }: { className?: string }) {
-  return <div className={cn("h-px bg-[var(--color-border)]", className)} />;
+  return <div className={cn("h-px bg-(--color-border)", className)} />;
 }
 
 // ── Spinner ────────────────────────────────────────────────
 export function Spinner({ size = 20 }: { size?: number }) {
   return (
     <svg
-      className="animate-spin text-[var(--color-accent)]"
+      className="animate-spin text-(--color-accent)"
       style={{ width: size, height: size }}
       viewBox="0 0 24 24"
       fill="none"

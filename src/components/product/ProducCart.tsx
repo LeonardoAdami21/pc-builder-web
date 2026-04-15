@@ -101,15 +101,15 @@ export function ProductCard({ product, className }: ProductCardProps) {
       <div className="absolute top-2 right-2 z-10 flex flex-col gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 translate-x-2 group-hover:translate-x-0">
         <button
           onClick={handleWishlist}
-          className="w-8 h-8 rounded-lg bg-[var(--color-bg-primary)]/80 backdrop-blur flex items-center justify-center hover:bg-[var(--color-bg-hover)] transition-colors"
+          className="w-8 h-8 rounded-lg bg-(--color-bg-primary)/80 backdrop-blur flex items-center justify-center hover:bg-(--color-bg-hover) transition-colors"
           title="Adicionar à wishlist"
         >
           {wishlisted ? (
-            <RiHeartFill size={15} className="text-[var(--color-danger)]" />
+            <RiHeartFill size={15} className="text-(--color-danger)" />
           ) : (
             <RiHeartLine
               size={15}
-              className="text-[var(--color-text-secondary)]"
+              className="text-(--color-text-secondary)"
             />
           )}
         </button>
@@ -118,8 +118,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
           className={cn(
             "w-8 h-8 rounded-lg backdrop-blur flex items-center justify-center transition-colors",
             inCompare
-              ? "bg-[var(--color-accent)]/20 text-[var(--color-accent)]"
-              : "bg-[var(--color-bg-primary)]/80 text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-hover)]",
+              ? "bg-(--color-accent)/20 text-(--color-accent)"
+              : "bg-(--color-bg-primary)/80 text-(--color-text-secondary) hover:bg-(--color-bg-hover)",
           )}
           title="Comparar produto"
         >
@@ -128,15 +128,15 @@ export function ProductCard({ product, className }: ProductCardProps) {
         <Link
           to={`/products/${product.slug}`}
           onClick={(e) => e.stopPropagation()}
-          className="w-8 h-8 rounded-lg bg-[var(--color-bg-primary)]/80 backdrop-blur flex items-center justify-center hover:bg-[var(--color-bg-hover)] transition-colors"
+          className="w-8 h-8 rounded-lg bg-(--color-bg-primary)/80 backdrop-blur flex items-center justify-center hover:bg-(--color-bg-hover) transition-colors"
           title="Ver produto"
         >
-          <RiEyeLine size={15} className="text-[var(--color-text-secondary)]" />
+          <RiEyeLine size={15} className="text-(--color-text-secondary)" />
         </Link>
       </div>
 
       {/* Imagem */}
-      <div className="relative aspect-square bg-[var(--color-bg-hover)] overflow-hidden">
+      <div className="relative aspect-square bg-(--color-bg-hover) overflow-hidden">
         {primaryImage ? (
           <img
             src={primaryImage}
@@ -147,7 +147,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
           <div className="w-full h-full flex items-center justify-center">
             <RiShoppingCartLine
               size={40}
-              className="text-[var(--color-text-muted)]"
+              className="text-(--color-text-muted)"
             />
           </div>
         )}
@@ -156,12 +156,12 @@ export function ProductCard({ product, className }: ProductCardProps) {
       {/* Info */}
       <div className="flex flex-col flex-1 p-3 gap-2">
         {product.brand && (
-          <span className="text-[10px] font-medium text-[var(--color-text-muted)] uppercase tracking-wider">
+          <span className="text-[10px] font-medium text-(--color-text-muted) uppercase tracking-wider">
             {product.brand}
           </span>
         )}
 
-        <h3 className="text-sm text-[var(--color-text-primary)] line-clamp-2 leading-snug flex-1 group-hover:text-[var(--color-accent)] transition-colors">
+        <h3 className="text-sm text-(--color-text-primary) line-clamp-2 leading-snug flex-1 group-hover:text-(--color-accent) transition-colors">
           {product.name}
         </h3>
 
@@ -169,7 +169,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         {product?.avgRating && (
           <div className="flex items-center gap-1.5">
             <StarRating rating={product.avgRating} size={12} />
-            <span className="text-[11px] text-[var(--color-text-muted)]">
+            <span className="text-[11px] text-(--color-text-muted)">
               ({product?.reviews ?? 0})
             </span>
           </div>
@@ -180,14 +180,14 @@ export function ProductCard({ product, className }: ProductCardProps) {
           <div>
             {product.comparePrice &&
               Number(product.comparePrice) > Number(product.price) && (
-                <p className="text-[11px] text-[var(--color-text-muted)] line-through">
+                <p className="text-[11px] text-(--color-text-muted) line-through">
                   {formatPrice(product.comparePrice)}
                 </p>
               )}
-            <p className="text-base font-bold text-[var(--color-price)] text-display">
+            <p className="text-base font-bold text-(--color-price) text-display">
               {formatPrice(product.price)}
             </p>
-            <p className="text-[10px] text-[var(--color-text-muted)]">
+            <p className="text-[10px] text-(--color-text-muted)">
               12x {formatPrice(Number(product.price) / 12)} s/juros
             </p>
           </div>
@@ -198,8 +198,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
             className={cn(
               "shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200",
               inStock
-                ? "bg-[var(--color-accent)] text-[var(--color-bg-primary)] hover:brightness-110 active:scale-90 shadow-[0_0_12px_var(--color-accent-glow)]"
-                : "bg-[var(--color-bg-hover)] text-[var(--color-text-muted)] cursor-not-allowed",
+                ? "bg-(--color-accent) text-(--color-bg-primary) hover:brightness-110 active:scale-90 shadow-[0_0_12px_var(--color-accent-glow)]"
+                : "bg-(--color-bg-hover) text-(--color-text-muted) cursor-not-allowed",
             )}
           >
             <RiShoppingCartLine size={16} />

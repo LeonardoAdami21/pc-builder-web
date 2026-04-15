@@ -3,48 +3,54 @@
 /* ─── Design Tokens ────────────────────────────────────────── */
 @theme {
   /* Paleta principal: dark gamer com acento neon-cyan */
-  --color-bg-primary:    #0a0a0f;
-  --color-bg-secondary:  #111118;
-  --color-bg-card:       #16161f;
-  --color-bg-hover:      #1c1c28;
-  --color-border:        #2a2a3a;
-  --color-border-light:  #3a3a50;
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #111118;
+  --color-bg-card: #16161f;
+  --color-bg-hover: #1c1c28;
+  --color-border: #2a2a3a;
+  --color-border-light: #3a3a50;
 
   /* Accent neon — diferencial visual forte */
-  --color-accent:        #00e5ff;
-  --color-accent-dim:    #00b8d4;
-  --color-accent-glow:   rgba(0, 229, 255, 0.15);
+  --color-accent: #00e5ff;
+  --color-accent-dim: #00b8d4;
+  --color-accent-glow: rgba(0, 229, 255, 0.15);
   --color-accent-subtle: rgba(0, 229, 255, 0.06);
 
   /* Secondary accent: amber para preços/destaques */
-  --color-price:         #ffd54f;
-  --color-price-dim:     #ffb300;
-  --color-success:       #00e676;
-  --color-danger:        #ff5252;
-  --color-warning:       #ff9100;
+  --color-price: #ffd54f;
+  --color-price-dim: #ffb300;
+  --color-success: #00e676;
+  --color-danger: #ff5252;
+  --color-warning: #ff9100;
 
   /* Texto */
-  --color-text-primary:   #f0f0f8;
+  --color-text-primary: #f0f0f8;
   --color-text-secondary: #8888aa;
-  --color-text-muted:     #55556a;
+  --color-text-muted: #55556a;
 
   /* Fontes */
-  --font-display: 'Rajdhani', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
+  --font-display: "Rajdhani", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
   /* Animações */
-  --duration-fast:   150ms;
-  --duration-base:   250ms;
-  --duration-slow:   400ms;
-  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ─── Fontes Google ────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
 
 /* ─── Reset e base ─────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -61,13 +67,20 @@ body {
 }
 
 /* ─── Scrollbar custom ─────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg-secondary); }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
 ::-webkit-scrollbar-thumb {
   background: var(--color-border-light);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--color-accent-dim); }
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-dim);
+}
 
 /* ─── Seleção de texto ─────────────────────────────────────── */
 ::selection {
@@ -77,7 +90,9 @@ body {
 
 /* ─── Utilitários customizados ─────────────────────────────── */
 @utility glow-accent {
-  box-shadow: 0 0 20px var(--color-accent-glow), 0 0 40px rgba(0,229,255,0.06);
+  box-shadow:
+    0 0 20px var(--color-accent-glow),
+    0 0 40px rgba(0, 229, 255, 0.06);
 }
 
 @utility glow-price {
@@ -88,8 +103,9 @@ body {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  transition: border-color var(--duration-base) ease,
-              transform var(--duration-base) var(--ease-out-expo);
+  transition:
+    border-color var(--duration-base) ease,
+    transform var(--duration-base) var(--ease-out-expo);
 }
 
 @utility card-hover {
@@ -123,21 +139,52 @@ body {
 }
 
 @keyframes skeleton-loading {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes pulse-accent {
-  0%, 100% { box-shadow: 0 0 0 0 var(--color-accent-glow); }
-  50%       { box-shadow: 0 0 0 8px transparent; }
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--color-accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+@keyframes pulse-price {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 213, 79, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px transparent;
+  }
 }

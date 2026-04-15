@@ -126,9 +126,9 @@ export function PriceHistoryChart({ data }: Props) {
   if (!stats) return null;
 
   return (
-    <div className="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-4 space-y-4">
+    <div className="bg-(--color-bg-card) border border-(--color-border) rounded-xl p-4 space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-display font-semibold text-[var(--color-text-primary)]">
+        <h3 className="text-display font-semibold text-(--color-text-primary)">
           Histórico de preços
         </h3>
         <Badge variant="muted">últimos {data.period.days} dias</Badge>
@@ -136,27 +136,27 @@ export function PriceHistoryChart({ data }: Props) {
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="bg-[var(--color-bg-hover)] rounded-lg p-3 text-center">
-          <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
+        <div className="bg-(--color-bg-hover) rounded-lg p-3 text-center">
+          <p className="text-[10px] text-(--color-text-muted) uppercase tracking-wider">
             Mínimo
           </p>
-          <p className="text-sm font-bold text-[var(--color-success)] mt-0.5">
+          <p className="text-sm font-bold text-(--color-success) mt-0.5">
             {formatPrice(stats.min)}
           </p>
         </div>
-        <div className="bg-[var(--color-bg-hover)] rounded-lg p-3 text-center">
-          <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
+        <div className="bg-(--color-bg-hover) rounded-lg p-3 text-center">
+          <p className="text-[10px] text-(--color-text-muted) uppercase tracking-wider">
             Médio
           </p>
-          <p className="text-sm font-bold text-[var(--color-text-primary)] mt-0.5">
+          <p className="text-sm font-bold text-(--color-text-primary) mt-0.5">
             {formatPrice(stats.avg)}
           </p>
         </div>
-        <div className="bg-[var(--color-bg-hover)] rounded-lg p-3 text-center">
-          <p className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
+        <div className="bg-(--color-bg-hover) rounded-lg p-3 text-center">
+          <p className="text-[10px] text-(--color-text-muted) uppercase tracking-wider">
             Máximo
           </p>
-          <p className="text-sm font-bold text-[var(--color-danger)] mt-0.5">
+          <p className="text-sm font-bold text-(--color-danger) mt-0.5">
             {formatPrice(stats.max)}
           </p>
         </div>
@@ -172,12 +172,12 @@ export function PriceHistoryChart({ data }: Props) {
         <div className="flex items-center gap-2 p-3 rounded-lg bg-emerald-950/30 border border-emerald-500/20">
           <RiArrowDownLine
             size={16}
-            className="text-[var(--color-success)] shrink-0"
+            className="text-(--color-success) shrink-0"
           />
-          <p className="text-sm text-[var(--color-success)]">
+          <p className="text-sm text-(--color-success)">
             <strong>{stats.dropPercent.toFixed(1)}%</strong> abaixo do preço
             máximo registrado
-            <span className="text-[var(--color-text-muted)] ml-1">
+            <span className="text-(--color-text-muted) ml-1">
               (você economiza {formatPrice(Math.abs(stats.dropFromMax))})
             </span>
           </p>

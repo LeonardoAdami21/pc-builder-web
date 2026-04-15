@@ -62,7 +62,7 @@ export function ProductFilters({
     <div className="space-y-5">
       {/* Ordenar */}
       <div>
-        <h4 className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-2">
+        <h4 className="text-xs font-semibold text-(--color-text-muted) uppercase tracking-wider mb-2">
           Ordenar por
         </h4>
         <div className="space-y-1">
@@ -73,8 +73,8 @@ export function ProductFilters({
               className={cn(
                 "w-full text-left px-3 py-1.5 rounded-lg text-sm transition-colors",
                 orderBy === opt.value
-                  ? "bg-[var(--color-accent-subtle)] text-[var(--color-accent)]"
-                  : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-hover)]",
+                  ? "bg-(--color-accent-subtle) text-(--color-accent)"
+                  : "text-(--color-text-secondary) hover:bg-(--color-bg-hover)",
               )}
             >
               {opt.label}
@@ -86,7 +86,7 @@ export function ProductFilters({
       {/* Marcas */}
       {brands.length > 0 && (
         <div>
-          <h4 className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-2">
+          <h4 className="text-xs font-semibold text-(--color-text-muted) uppercase tracking-wider mb-2">
             Marca
           </h4>
           <div className="space-y-1">
@@ -95,8 +95,8 @@ export function ProductFilters({
               className={cn(
                 "w-full text-left px-3 py-1.5 rounded-lg text-sm transition-colors",
                 !selectedBrand
-                  ? "bg-[var(--color-accent-subtle)] text-[var(--color-accent)]"
-                  : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-hover)]",
+                  ? "bg-(--color-accent-subtle) text-(--color-accent)"
+                  : "text-(--color-text-secondary) hover:bg-(--color-bg-hover)",
               )}
             >
               Todas
@@ -108,12 +108,12 @@ export function ProductFilters({
                 className={cn(
                   "w-full text-left px-3 py-1.5 rounded-lg text-sm flex justify-between items-center transition-colors",
                   selectedBrand === b.name
-                    ? "bg-[var(--color-accent-subtle)] text-[var(--color-accent)]"
-                    : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-hover)]",
+                    ? "bg-(--color-accent-subtle) text-(--color-accent)"
+                    : "text-(--color-text-secondary) hover:bg-(--color-bg-hover)",
                 )}
               >
                 <span>{b.name}</span>
-                <span className="text-[11px] text-[var(--color-text-muted)]">
+                <span className="text-[11px] text-(--color-text-muted)">
                   ({b.count})
                 </span>
               </button>
@@ -124,7 +124,7 @@ export function ProductFilters({
 
       {/* Faixa de preço */}
       <div>
-        <h4 className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-2">
+        <h4 className="text-xs font-semibold text-(--color-text-muted) uppercase tracking-wider mb-2">
           Faixa de preço
         </h4>
         <div className="flex gap-2">
@@ -133,14 +133,14 @@ export function ProductFilters({
             placeholder={priceRange ? `R$ ${priceRange.min}` : "Min"}
             value={minPrice}
             onChange={(e) => setMinPrice(e.target.value)}
-            className="w-full bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-lg px-2 py-1.5 text-xs text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-accent)]"
+            className="w-full bg-(--color-bg-card) border border-(--color-border) rounded-lg px-2 py-1.5 text-xs text-(--color-text-primary) focus:outline-none focus:border-(--color-accent)"
           />
           <input
             type="number"
             placeholder={priceRange ? `R$ ${priceRange.max}` : "Max"}
             value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
-            className="w-full bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-lg px-2 py-1.5 text-xs text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-accent)]"
+            className="w-full bg-(--color-bg-card) border border-(--color-border) rounded-lg px-2 py-1.5 text-xs text-(--color-text-primary) focus:outline-none focus:border-(--color-accent)"
           />
         </div>
       </div>
@@ -151,7 +151,7 @@ export function ProductFilters({
           onClick={() => setInStock(!inStock)}
           className={cn(
             "w-9 h-5 rounded-full transition-colors relative",
-            inStock ? "bg-[var(--color-accent)]" : "bg-[var(--color-border)]",
+            inStock ? "bg-(--color-accent)" : "bg-(--color-border)",
           )}
         >
           <span
@@ -161,7 +161,7 @@ export function ProductFilters({
             )}
           />
         </div>
-        <span className="text-sm text-[var(--color-text-secondary)]">
+        <span className="text-sm text-(--color-text-secondary)">
           Somente em estoque
         </span>
       </label>
@@ -182,8 +182,8 @@ export function ProductFilters({
     <>
       {/* Desktop sidebar */}
       <aside className="hidden lg:block w-52 shrink-0">
-        <div className="sticky top-32 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-xl p-4">
-          <h3 className="text-display font-semibold text-[var(--color-text-primary)] mb-4">
+        <div className="sticky top-32 bg-(--color-bg-card) border border-(--color-border) rounded-xl p-4">
+          <h3 className="text-display font-semibold text-(--color-text-primary) mb-4">
             Filtros
           </h3>
           <FilterContent />
@@ -207,13 +207,13 @@ export function ProductFilters({
               className="fixed inset-0 bg-black/60 z-40"
               onClick={() => setMobileOpen(false)}
             />
-            <div className="fixed bottom-0 left-0 right-0 bg-[var(--color-bg-secondary)] border-t border-[var(--color-border)] rounded-t-2xl z-50 p-5 max-h-[80vh] overflow-y-auto">
+            <div className="fixed bottom-0 left-0 right-0 bg-(--color-bg-secondary) border-t border-(--color-border) rounded-t-2xl z-50 p-5 max-h-[80vh] overflow-y-auto">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-display font-semibold">Filtros</h3>
                 <button onClick={() => setMobileOpen(false)}>
                   <RiCloseLine
                     size={22}
-                    className="text-[var(--color-text-muted)]"
+                    className="text-(--color-text-muted)"
                   />
                 </button>
               </div>
